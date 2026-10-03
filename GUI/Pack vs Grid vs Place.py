@@ -1,0 +1,18 @@
+from tkinter import *
+win = Tk()
+win.geometry("500x400")
+# 1. Pack placement method (padding and expanding based)
+lbl_pack = Label(win, text="Packed Element", bg="red")
+lbl_pack.pack(fill=X, padx=10, pady=5)
+# 2. Grid placement method (row and column multi-grid architecture)
+# Deployed usually inside specialized frames to avoid absolute coordinate clashing
+grid_frame = Frame(win)
+grid_frame.pack(pady=20)
+lbl_grid1 = Label(grid_frame, text="Row 0, Col 0", bg="green")
+lbl_grid1.grid(row=0, column=0, padx=5, pady=5)
+lbl_grid2 = Label(grid_frame, text="Row 1, Col 1", bg="blue")
+lbl_grid2.grid(row=1, column=1, padx=5, pady=5)
+# 3. Place placement method (absolute/relative coordinates using precise pixels)
+lbl_place = Label(win, text="Placed Element", bg="orange")
+lbl_place.place(x=150, y=250, width=200, height=50)
+win.mainloop()
